@@ -1,3 +1,7 @@
+#!/bin/bash
+# Idea by callmezatiel
+# version by hhk02 and callmezatiel
+
 
 ##Update and repo Installation:
 sudo xbps-install -Su
