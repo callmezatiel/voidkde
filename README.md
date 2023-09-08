@@ -1,6 +1,7 @@
 # voidkde
 post install kde cuztom script
 
+## Special Thanks To Isaac For Your Incredible Support 
 
 # Features
 - Add NonFree & Multilib Repositories
