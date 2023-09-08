@@ -15,7 +15,7 @@ post install kde cuztom script
 # Installation
 ```
 - sudo su
-- git clone https://github.com/callmezatiel/voidkde
+- git clone http://github.com/callmezatiel/voidkde
 - cd voidkde
 - chmod +x voidkde.sh
 - sudo ./voidkde.sh
