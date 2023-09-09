@@ -1,6 +1,6 @@
 RebootSystem ()
 {
-    dialog --title "Rebooting system" --msgbox "Press ENTER to reboot the system to make changes effect!"
+    dialog --title "Rebooting system" --msgbox "Press ENTER to reboot the system to make changes effect!" 20 30
     reboot
 }
 
@@ -16,7 +16,7 @@ Install_Build_Essentials_Kernel_Headers ()
             sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Install Build Essentias and Kernel Headers" --gauge "Installing Build Essentials and Kernel Headers..."
+    dialog --title "KDE Void Installer Script - Install Build Essentias and Kernel Headers" --gauge "Installing Build Essentials and Kernel Headers..." 20 30
 
     Install_Drivers
 }
@@ -38,7 +38,7 @@ Install_Drivers ()
             sleep 1
         done
         ) |
-        dialog --title "KDE Void Installer Script - Install Graphics drivers (Intel)" --gauge "Installing Intel graphics driver..."
+        dialog --title "KDE Void Installer Script - Install Graphics drivers (Intel)" --gauge "Installing Intel graphics driver..." 20 30
 
     elif (lspci |grep VGA | grep "nVidia\|NVIDIA"); then
         echo "NVIDIA Graphics Card detected!"
@@ -51,7 +51,7 @@ Install_Drivers ()
             sleep 1
         done
         ) |
-        dialog --title "KDE Void Installer Script - Install Graphics drivers (NVIDIA)" --gauge "Installing NVIDIA graphics driver..."
+        dialog --title "KDE Void Installer Script - Install Graphics drivers (NVIDIA)" --gauge "Installing NVIDIA graphics driver..." 20 30
         
     elif (lspci | grep VGA | grep "ATI\|AMD"); then
         echo "AMD/ATI Graphics detcted!"
@@ -64,7 +64,7 @@ Install_Drivers ()
             sleep 1
         done
         ) |
-        dialog --title "KDE Void Installer Script - Install Graphics drivers (ATI/AMD)" --gauge "Installing AMD graphics driver..."
+        dialog --title "KDE Void Installer Script - Install Graphics drivers (ATI/AMD)" --gauge "Installing AMD graphics driver..." 20 30
 
     fi
 
@@ -88,7 +88,7 @@ Install_KDE ()
             sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Install Audio Libraries" --gauge "Installing audio drivers.."
+    dialog --title "KDE Void Installer Script - Install Audio Libraries" --gauge "Installing audio drivers.." 20 30
 
 
 
@@ -102,7 +102,7 @@ Install_KDE ()
             sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Install KDE Plasma Desktop" --gauge "Installing KDE DESKTOP..."
+    dialog --title "KDE Void Installer Script - Install KDE Plasma Desktop" --gauge "Installing KDE DESKTOP..." 20 30
 
     progress_install_system_utilities=0
     (
@@ -113,7 +113,7 @@ Install_KDE ()
             sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Install System Utilities" --gauge "Installing system utilities..."
+    dialog --title "KDE Void Installer Script - Install System Utilities" --gauge "Installing system utilities..." 20 30
 
     progress_install_additional_apps=0
     (
@@ -124,7 +124,7 @@ Install_KDE ()
             sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Install Additional Apps" --gauge "Installing additional apps..."
+    dialog --title "KDE Void Installer Script - Install Additional Apps" --gauge "Installing additional apps..." 20 30
 
 }
 
@@ -189,7 +189,7 @@ SystemUpgrade ()
         sleep 2
         done
     ) |
-    dialog --title "System upgrade" --gauge "Upgrading system...."
+    dialog --title "System upgrade" --gauge "Upgrading system...." 20 30
 
 
     
@@ -209,7 +209,7 @@ EnableNonFreeRepos ()
         sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Enable Non-Free Repos" --gauge "Enabling and installing non-free repos...."
+    dialog --title "KDE Void Installer Script - Enable Non-Free Repos" --gauge "Enabling and installing non-free repos...." 20 30
     
 
     clear
