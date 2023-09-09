@@ -102,7 +102,7 @@ Install_KDE ()
     progress_install_additional_apps=0
     (
         echo 50
-        xbps-install neofetch htop alacritty kvantum timeshift qt5-devel exa grub-customizer spectacle kcalc gwenview fbv ntfs-3g telegram-desktop hplip octoxbps qbittorrent micro kate nano okular gimp libreoffice vlc obs ranger atool zsh -y
+        xbps-install neofetch htop alacritty kvantum timeshift qt5-devel exa grub-customizer spectacle kcalc gwenview fbv ntfs-3g telegram-desktop hplip octoxbps qbittorrent micro nano okular gimp libreoffice vlc obs ranger atool zsh -y
         sleep 1
         echo 100
     ) |
