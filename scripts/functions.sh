@@ -163,7 +163,8 @@ Welcome ()
     case $response in
         0) SystemUpgrade;;
         1) echo "Thanks for trying, Goodbye!";;
-        255) echo "Thanks for trying, Goodbye!"
+        255) echo "Thanks for trying, Goodbye!";
+    
 }
 
 # Declare system upgrade function
@@ -176,7 +177,7 @@ SystemUpgrade ()
     case $response_system_upgrader in
         0) echo "Yes i needed" ;;
         1) EnableNonFreeRepos;;
-        255) EnableNonFreeRepos
+        255) EnableNonFreeRepos;
 
     progress_upgrader=0
     (
