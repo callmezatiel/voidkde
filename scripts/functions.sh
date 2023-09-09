@@ -128,7 +128,8 @@ Install_Drivers ()
             echo 90
             sleep 1
             echo 100
-        )
+        ) |
+        dialog --title "KDE Void Installer Script - Install Graphics drivers (VMware)" --gauge "Installing VMWare SVGA Adapter and other VMware stuff..." 20 30
     fi
 
     Install_KDE
