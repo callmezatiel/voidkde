@@ -9,13 +9,8 @@ source "scripts/functions.sh"
 if [[ $EUID -eq 0 ]]; then
     # Every code on this part run as ROOT
     # Call the functions of the functions.sh script. 
-    EnableNonFreeRepos
-    Install_Build_Essentials
-    Install_KDE
-    Install_Drivers
-    EnableServices
-
+    Welcome
 # Else show error message
 else
     echo "ERROR: Run as root!"
-fi 
+fi
