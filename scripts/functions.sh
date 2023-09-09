@@ -124,7 +124,7 @@ Install_KDE ()
             sleep 1
         done
     ) |
-    dialog --title "KDE Void Installer Script - Install System Utilities" --gauge "Installing system utilities..."
+    dialog --title "KDE Void Installer Script - Install Additional Apps" --gauge "Installing additional apps..."
 
 }
 
