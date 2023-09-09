@@ -116,6 +116,8 @@ Install_Drivers ()
             echo 40
             sleep 1
             echo 50
+            ln -s /etc/sv/vmtoolsd /var/service
+            ln -s /etc/sv/vmware-vmblock-fuse /var/service
             sleep 1
             echo 60
             sleep 1
@@ -259,9 +261,11 @@ EnableServices ()
     sed -i "s/--noclear/--noclear\ --skip-login\ --login-options=$USER/g" /etc/sv/agetty-tty1/conf
     rm -f /var/service/agetty-tty{3,4,5,6}
     ln -s /etc/sv/dbus /var/service/
+    ln -s /etc/sv/tlp /var/service/
     ln -s /etc/sv/sddm /var/service/
     ln -s /etc/sv/NetworkManager /var/service/
 
+    tlp start
     sv up dbus
     #Enable Display Manager (SDDM)
     sv up sddm
