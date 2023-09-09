@@ -157,7 +157,7 @@ EnableServices ()
 Welcome ()
 {
     dialog --title "KDE Void Installer Script - Welcome" \
-    --yesno "Welcome to a simple script to get a vanilla KDE Plasma Desktop on Void Linux. Are you sure to continue?"
+    --yesno "Welcome to a simple script to get a vanilla KDE Plasma Desktop on Void Linux. Are you sure to continue?" 20 30
     response=$?
 
     case $response in
@@ -172,7 +172,7 @@ Welcome ()
 SystemUpgrade ()
 {
     dialog --title "KDE Void Installer Script - System Upgrade" \
-    --yesno "Would you like to perform a system upgrade before continuing ?"
+    --yesno "Would you like to perform a system upgrade before continuing ?" 20 30
     response_system_upgrader=$?
 
     case $response_system_upgrader in
