@@ -266,6 +266,15 @@ EnableServices ()
     ln -s /etc/sv/sddm /var/service/
     ln -s /etc/sv/NetworkManager /var/service/
 
+    # added by hhk02
+
+    #  This it's for remove elogind because can cause conflicts
+    #   Example: elogind has alredy started at ....
+    if [ -d /var/service/elogind ]; then
+        echo "Removing elogind"
+        rm -r /var/service/elogind
+    fi
+
     tlp start
     sv up dbus
     #Enable Display Manager (SDDM)
