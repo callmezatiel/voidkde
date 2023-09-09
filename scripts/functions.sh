@@ -176,13 +176,14 @@ SystemUpgrade ()
     (
         while :
         do
-            ((progress_upgrader +=10))
             xbps-install -Syu
+            ((progress_upgrader +=10))
+            sleep 1
         done
     ) |
     dialog --title "System upgrade" --gauge "Upgrading system...." 20 30
 
-
+    EnableNonFreeRepos
     
 }
 
