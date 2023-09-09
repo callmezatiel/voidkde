@@ -103,7 +103,30 @@ Install_Drivers ()
             echo 100
         ) |
         dialog --title "KDE Void Installer Script - Install Graphics drivers (ATI/AMD)" --gauge "Installing AMD graphics driver..." 20 30
-
+    elif (lspci | grep VGA | grep "VMware" ); then
+        echo "VMWare SVGA Adapter Detected!"
+        (
+            echo 10
+            xbps-install open-vm-tools -y
+            sleep 1
+            echo 20
+            sleep 1
+            echo 30
+            sleep 1
+            echo 40
+            sleep 1
+            echo 50
+            sleep 1
+            echo 60
+            sleep 1
+            echo 70
+            sleep 1
+            sleep 80
+            sleep 1
+            echo 90
+            sleep 1
+            echo 100
+        )
     fi
 
     Install_KDE
