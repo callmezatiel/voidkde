@@ -13,7 +13,6 @@ Install_Build_Essentials_Kernel_Headers ()
         do
             ((progress_build_essentials+=10))
             xbps-install base-devel make cmake rust cargo linux-headers -y
-            sleep 1
         done
     ) |
     dialog --title "KDE Void Installer Script - Install Build Essentias and Kernel Headers" --gauge "Installing Build Essentials and Kernel Headers..." 20 30
@@ -35,7 +34,6 @@ Install_Drivers ()
         do
             ((progress_graphics+=10))
             xbps-install intel-video-accel mesa-vulkan-intel vulkan-loader mesa-intel-dri ffmpeg ffmpegthumbs pulseaudio alsa-utils pipewire -y
-            sleep 1
         done
         ) |
         dialog --title "KDE Void Installer Script - Install Graphics drivers (Intel)" --gauge "Installing Intel graphics driver..." 20 30
@@ -48,7 +46,6 @@ Install_Drivers ()
         do
             ((progress_graphics+=10))
             xbps-install nvidia vulkan-loader ffmpeg ffmpegthumbs pulseaudio alsa-utils pipewire -y
-            sleep 1
         done
         ) |
         dialog --title "KDE Void Installer Script - Install Graphics drivers (NVIDIA)" --gauge "Installing NVIDIA graphics driver..." 20 30
@@ -61,7 +58,6 @@ Install_Drivers ()
         do
             ((progress_graphics+=10))
             xbps-install linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau -y
-            sleep 1
         done
         ) |
         dialog --title "KDE Void Installer Script - Install Graphics drivers (ATI/AMD)" --gauge "Installing AMD graphics driver..." 20 30
@@ -85,7 +81,6 @@ Install_KDE ()
         do
             ((progress_audio_drivers+=10))
             xbps-install alsa-utils alsa-plugins-pulseaudio ffmpeg ffmpegthumbs pulseaudio pipewire -y
-            sleep 1
         done
     ) |
     dialog --title "KDE Void Installer Script - Install Audio Libraries" --gauge "Installing audio drivers.." 20 30
@@ -99,7 +94,6 @@ Install_KDE ()
         do
             ((progress_install_kde+=10))
             xbps-install xorg kde5 kde5-baseapps xdg-user-dirs xdg-utils xtools  micro NetworkManager bluez tlp tlp-rdw preload rsync -y
-            sleep 1
         done
     ) |
     dialog --title "KDE Void Installer Script - Install KDE Plasma Desktop" --gauge "Installing KDE DESKTOP..." 20 30
@@ -110,7 +104,6 @@ Install_KDE ()
         do
             ((progress_install_system_utilities+=10))
             xbps-install gvfs gvfs-mtp gzip ntp procps-ng udisks2 unzip zip ark wget curl plymouth bluez tlp tlp-rdw preload zstd -y
-            sleep 1
         done
     ) |
     dialog --title "KDE Void Installer Script - Install System Utilities" --gauge "Installing system utilities..." 20 30
@@ -121,7 +114,6 @@ Install_KDE ()
         do
             ((progress_install_additional_apps+=10))
             xbps-install neofetch htop alacritty kvantum timeshift qt5-devel exa grub-customizer spectacle kcalc gwenview fbv ntfs-3g telegram-desktop hplip octoxbps qbittorrent micro kate nano okular gimp libreoffice vlc obs ranger atool zsh -y
-            sleep 1
         done
     ) |
     dialog --title "KDE Void Installer Script - Install Additional Apps" --gauge "Installing additional apps..." 20 30
@@ -186,7 +178,6 @@ SystemUpgrade ()
         do
             ((progress_upgrader +=10))
             xbps-install -Syu
-        sleep 2
         done
     ) |
     dialog --title "System upgrade" --gauge "Upgrading system...." 20 30
@@ -206,7 +197,6 @@ EnableNonFreeRepos ()
         do
         (( progress_nonfree+=10 ))
         xbps-install void-repo-nonfree void-repo-multilib void-repo-multilib-nonfree -y
-        sleep 1
         done
     ) |
     dialog --title "KDE Void Installer Script - Enable Non-Free Repos" --gauge "Enabling and installing non-free repos...." 20 30
