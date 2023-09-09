@@ -191,6 +191,6 @@ EnableNonFreeRepos ()
     
 
     clear
-    Install_Build_Essentials
+    Install_Build_Essentials_Kernel_Headers
 }
 
