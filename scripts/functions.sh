@@ -64,6 +64,8 @@ Install_Drivers ()
             echo 40
             sleep 1
             echo 50
+            # Enable NVIDIA Power Management Daemon
+            ln -s /etc/sv/nvidia-powerd /var/service/
             sleep 1
             echo 60
             sleep 1
@@ -116,8 +118,8 @@ Install_Drivers ()
             echo 40
             sleep 1
             echo 50
-            ln -s /etc/sv/vmtoolsd /var/service
-            ln -s /etc/sv/vmware-vmblock-fuse /var/service
+            ln -s /etc/sv/vmtoolsd /var/service/
+            ln -s /etc/sv/vmware-vmblock-fuse /var/service/
             sleep 1
             echo 60
             sleep 1
@@ -262,7 +264,7 @@ EnableServices ()
     sed -i "s/--noclear/--noclear\ --skip-login\ --login-options=$USER/g" /etc/sv/agetty-tty1/conf
     rm -f /var/service/agetty-tty{3,4,5,6}
     ln -s /etc/sv/dbus /var/service/
-    ln -s /etc/sv/tlp /var/service/
+
     ln -s /etc/sv/sddm /var/service/
     ln -s /etc/sv/NetworkManager /var/service/
 
@@ -275,7 +277,11 @@ EnableServices ()
         rm -r /var/service/elogind
     fi
 
-    tlp start
+    # Detect if have a battery for enable TLP service (laptop)
+    if [ -d /sys/class/power_supply/BAT0 ]; then
+        ln -s /etc/sv/tlp /var/service/
+        tlp start
+    fi    
     sv up dbus
     #Enable Display Manager (SDDM)
     sv up sddm
