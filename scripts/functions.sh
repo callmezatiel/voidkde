@@ -255,10 +255,7 @@ EnableServices ()
 {
     echo "Enabling services and starting..."
     # Make symbolic link to /var/service folder
-    # /var/service it's the folder where are all services
-    
-    # Example:
-    # /var/service has every single service run when turn on the system
+    # /var/service it's the folder where are all services run as startup.
     
     # Added by callmezatiel
     sed -i "s/--noclear/--noclear\ --skip-login\ --login-options=$USER/g" /etc/sv/agetty-tty1/conf
@@ -281,7 +278,13 @@ EnableServices ()
     if [ -d /sys/class/power_supply/BAT0 ]; then
         ln -s /etc/sv/tlp /var/service/
         tlp start
-    fi    
+    fi
+    # Detect if you have Bluetooth on your PC and enable the service
+    if (lspci | grep "Bluetooth" || lsusb | grep "Bluetooth"); then
+        ln -s /etc/sv/bluetoothd /var/service/
+        sv up bluetoothd
+    fi  
+
     sv up dbus
     #Enable Display Manager (SDDM)
     sv up sddm
