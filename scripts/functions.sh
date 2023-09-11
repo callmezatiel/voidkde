@@ -24,6 +24,29 @@ Install_Build_Essentials_Kernel_Headers ()
 
 Install_Drivers ()
 {
+    (
+        echo 10
+        xbps-install touchegg
+        sleep 1
+        echo 20
+        sleep 1
+        echo 30
+        sleep 1
+        echo 40
+        sleep 1
+        echo 50
+        sleep 1
+        echo 60
+        sleep 1
+        echo 70
+        sleep 1
+        sleep 80
+        sleep 1
+        echo 90
+        sleep 1
+        echo 100
+    ) |
+    dialog --title "KDE Void Installer Script - Install Graphics drivers (Intel)" --gauge "Installing touchegg (multi-touch gesture recognizer)..." 20 30
     if (lspci | grep VGA | grep "Intel"); then
         echo "Intel Graphics detected!"
         (
