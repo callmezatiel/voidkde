@@ -35,6 +35,7 @@ Install_Drivers ()
         echo 40
         sleep 1
         echo 50
+        sudo ln -s /etc/sv/touchegg /var/service/
         sleep 1
         echo 60
         sleep 1
