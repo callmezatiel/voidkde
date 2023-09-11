@@ -47,7 +47,7 @@ Install_Drivers ()
         sleep 1
         echo 100
     ) |
-    dialog --title "KDE Void Installer Script - Install Graphics drivers (Intel)" --gauge "Installing touchegg (multi-touch gesture recognizer)..." 20 30
+    dialog --title "KDE Void Installer Script - Misc - Multi-touch recognizer" --gauge "Installing touchegg (multi-touch gesture recognizer)..." 20 30
     if (lspci | grep VGA | grep "Intel"); then
         echo "Intel Graphics detected!"
         (
